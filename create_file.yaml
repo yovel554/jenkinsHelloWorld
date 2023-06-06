@@ -1,0 +1,14 @@
+---
+- name: create file and add text
+  hosts: my_hosts
+  gather_facts: false
+  tasks: 
+    - name: create file
+      ansible.builtin.file:
+        path: ./yami 
+        state: touch
+    - name: add text to the file
+      ansible.builtin.lineinfile:
+        path: ./yami
+        line: "gever"
+        create: yes
